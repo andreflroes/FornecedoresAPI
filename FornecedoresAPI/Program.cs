@@ -1,6 +1,18 @@
+using Data.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddControllers(options =>
+{
+    options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = false;
+});
+
+builder.Services.AddDbContext<FornecedoresContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("FornecedoresDB"),
+        sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()
+    ));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
