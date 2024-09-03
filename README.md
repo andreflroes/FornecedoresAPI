@@ -18,3 +18,7 @@ A **FornecedoresAPI** é uma API desenvolvida em C# utilizando o .NET 8.0 Ela pe
 - Entity Framework Core
 - SQL Server
 - Swagger para documentação da API
+
+## Banco de dados
+
+- O Script para criação do banco de dados e da tabela necessária se encontra no arquivo "ScriptFornecedoresDB.sql"
